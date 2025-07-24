@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int fig(int num){
+    if(num==0){
+        return 0;
+    }
+    if(num==1){
+        return 1;
+    }
+    else{
+        return fig(num-1)+fig(num-2);
+    }
+}
+int main(){
+    int n;
+    cout<<"Enter the number:  ";
+    cin>>n;
+    for (int i=0;i<n;i++){
+        cout<<fig(i)<<" ";
+    }
+    return 0;
+}
