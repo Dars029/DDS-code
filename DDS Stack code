@@ -1,24 +1,46 @@
 #include<iostream>
 using namespace std;
+int top=-1;
 #define size 5
 int stack[size];
-int top=-1;
-void push(int val){
-    if(top<size-1){
-        top++;
-        stack[top]=val;
-        cout<<val<<" inserted succesfully"<<endl;
+void push(int a){
+    if(top==size-1){
+        cout<<"overflow"<<endl;
     }else{
-        cout<<"\n  Stack is Over flow"<<endl;
+        top++;
+        stack[top]=a;
+        cout<<a<<"inserted";
+        cout<<endl;
     }
-}
-
-
-int main(){
+}  
+    void pop() {
+        if(top==-1){
+            cout<<"stack is empty underflow"<<endl;
+        }
+        else{
+            cout<<stack[top]<<"removed"<<endl;
+            top--;
+        }
+    }
+        void display(){
+            if(top==-1){
+                cout<<"stack is empty can not diaplay"<<endl;
+           }else{
+                for(int i=top;i>=0;i--){
+                    cout<<stack[i]<<" ";
+                }
+            }
+        }
+        
+        int main(){
+             push(10);
     push(10);
-    push(10);
-    push(10);
-    push(10);
-    push(10);
+    push(20);
+    push(30);
+    push(40);
+    push(50);
+    push(60);
+    pop();
     push(90);
-}
+    display();
+ }
